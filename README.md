@@ -51,7 +51,7 @@ Praise, frustration, and everything in between.
 Before writing code, I wrote these down:
 
 1. What percentage of customers are happy with this product?
-2. What words appear most in negative reviews?
+2. What words appear most across all reviews?
 3. Is there a pattern in what unhappy customers complain about?
 4. Can we automatically detect emotion without reading manually?
 5. What should the business do differently based on these reviews?
@@ -64,51 +64,54 @@ exists to answer one of these questions.
 ## What I Found
 
 **Most customers are satisfied**
-60% of reviews were classified as positive.
-The overall sentiment score leaned clearly toward the positive side.
+16 out of 30 reviews were classified as positive —
+the largest group by a clear margin.
 
-**Negative reviews shared one theme**
-Unhappy customers kept mentioning the same thing — product durability.
-One targeted fix could convert a significant portion of neutral
-customers into satisfied ones.
+**Negative reviews are significant too**
+12 out of 30 reviews were negative — a number too large to ignore.
+The word "terrible" and "disappointed" appeared repeatedly,
+pointing to a consistent product quality issue.
 
-**Neutral customers are an opportunity**
-Nearly 20% of reviews were neutral — not angry, not happy.
-These customers are on the fence and easiest to win over.
+**The word data tells a story**
+The most used word across all reviews was "product" — followed by
+"quality" and "great". Customers care deeply about what they
+are getting for their money.
 
-**NLP works**
-The VADER model classified reviews with strong accuracy —
-matching what a human reader would naturally feel reading each one.
+**Neutral customers are a small but winnable group**
+Only 2 reviews were neutral — these customers are on the fence
+and the easiest to convert with small improvements.
+
+**The scores do not lie**
+The sentiment score distribution shows two clear peaks —
+one around -0.5 for frustrated customers and one around +0.75
+for happy ones. Very few reviews sit in the middle.
 
 ---
 
 ## The Visualizations
 
 ### Image 1 — Most frequent words in reviews
-> Shows which words appear most across all 30 reviews
+> The word "product" appeared 10 times, "quality" 7 times, "great" 5 times.
+> Customers are clearly focused on what they are getting for their money.
 
-![Most Frequent Words](most_frequent_words.png)
+![Most Frequent Words in Reviews](nlp.png)
 
 ---
 
 ### Image 2 — Sentiment distribution
-> Shows how many reviews are positive, negative and neutral
+> 16 positive, 12 negative, 2 neutral out of 30 reviews.
+> More customers are happy — but the negative group is too large to ignore.
 
 ![Sentiment Distribution](sentiment_distribution.png)
 
 ---
 
-### Image 3 — Sentiment score spread
-> Shows the full range of scores from most negative to most positive
+### Image 3 — Sentiment score distribution
+> Two clear peaks — one on the negative side around -0.5
+> and one on the positive side around +0.75.
+> Most customers feel strongly one way or the other.
 
-![Sentiment Score Spread](sentiment_score_spread.png)
-
----
-
-### Image 4 — Overall public opinion pie chart
-> A clear picture of the overall customer feeling
-
-![Public Opinion](public_opinion_pie.png)
+![Sentiment Score Distribution](sentiment_score_distribution.png)
 
 ---
 
@@ -118,11 +121,11 @@ Based on the sentiment findings:
 
 | # | Area | Recommendation |
 |---|------|---------------|
-| 1 | Marketing | Use top positive reviews as testimonials in ads |
-| 2 | Product | Fix durability issues mentioned in negative reviews |
-| 3 | Brand | Overall reputation is strong — maintain consistency |
-| 4 | Customer care | Follow up with neutral reviewers to convert them |
-| 5 | Trend | Fast shipping and quality are the top positive themes |
+| 1 | Marketing | Use the 16 positive reviews as testimonials in ads |
+| 2 | Product | Investigate quality complaints from the 12 negative reviews |
+| 3 | Brand | Overall reputation is mixed — improvement is needed |
+| 4 | Customer care | Follow up with the 2 neutral reviewers to win them over |
+| 5 | Trend | Quality and value for money are the most talked about themes |
 
 ---
 
@@ -167,10 +170,9 @@ and every finding in plain simple language.
 |------|-----------|
 | `task4_sentiment_amazon_reviews.ipynb` | Full notebook with all code and outputs |
 | `task4_sentiment_walkthrough.mp4` | Video explanation of every step |
-| `most_frequent_words.png` | Image 1 — most frequent words |
+| `nlp.png` | Image 1 — most frequent words in reviews |
 | `sentiment_distribution.png` | Image 2 — sentiment distribution |
-| `sentiment_score_spread.png` | Image 3 — sentiment score spread |
-| `public_opinion_pie.png` | Image 4 — overall public opinion |
+| `sentiment_score_distribution.png` | Image 3 — sentiment score distribution |
 
 ---
 
